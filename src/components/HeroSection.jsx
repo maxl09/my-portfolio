@@ -88,7 +88,7 @@ const HeroSection = () => {
                     transform: "translateY(-50%)",
                 }}
             >
-                <Typography variant="h2" sx={{ fontWeight: "bold", whiteSpace: "pre", fontSize: { xs: '40px', sm: '55px' }, fontWeight: 700 }}>
+                <Typography variant="h2" sx={{ fontWeight: "bold", whiteSpace: "pre", fontSize: { xs: '40px', sm: '55px' } }}>
                     <Typewriter
                         words={["Hi, it's Max"]}
                         loop={1}
