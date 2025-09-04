@@ -5,7 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const NavBar = () => {
     const [anchor, setAnchor] = useState(null);
-    const menuItems = ['home', 'about', 'projects', 'contact'];
+    const menuItems = ['home', 'about', 'skills', 'projects', 'contact'];
 
     const openMenu = (event) => {
         setAnchor(event.currentTarget);
@@ -16,19 +16,19 @@ const NavBar = () => {
     }
 
     return (
-        <AppBar position="sticky" sx={{ background: 'rgb(0,0,0,0.5)', paddingX: { xs: '10px', sm: '10%' } }}>
+        <AppBar position="sticky" sx={{ background: 'rgb(0,0,0,1)', paddingX: { xs: '10px', sm: '10%' } }}>
             <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px' }}>
                 <Typography variant="h4" color='inherit' component="a" href="#home" sx={{ fontWeight: 700, cursor: 'pointer', letterSpacing: 2, ":hover": { color: 'inherit' } }}>
-                    max.<span style={{
+                    phuoc.<span style={{
                         background: "linear-gradient(90deg, #00ff99, #1f8053)",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                     }}>ly</span>
                 </Typography>
                 <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 3, padding: '5px 2%' }}>
-                    <Button color="inherit" href="#home" sx={{ fontSize: '18px', '&:hover': { color: 'primary.main', background: 'transparent' } }}>Home</Button>
-                    <Button color="inherit" href="#about" sx={{ fontSize: '18px', '&:hover': { color: 'primary.main', background: 'transparent' } }}>About</Button>
-                    <Button color="inherit" href="#projects" sx={{ fontSize: '18px', '&:hover': { color: 'primary.main', background: 'transparent' } }}>Projects</Button>
+                    {menuItems.slice(0, -1).map((item) =>
+                        <Button color="inherit" href={`#${item}`} sx={{ fontSize: '18px', '&:hover': { color: 'primary.main', background: 'transparent' }, textTransform: 'uppercase' }}>{item}</Button>
+                    )}
                 </Box>
                 <Box sx={{ display: { xs: 'none', sm: 'flex' }, }}>
                     <Button color="inherit" href="#contact" sx={{

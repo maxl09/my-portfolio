@@ -12,15 +12,11 @@ import HeroSection from "../components/HeroSection";
 import About from "../components/About";
 import Projects from "../components/Projects";
 import TapeSection from "../components/TapeSection";
+import Skills from "../components/Skills";
 
 function Home() {
 
     const [openMenu, setOpenMenu] = useState(false);
-
-    const handleMenuClick = () => {
-        setOpenMenu((openMenu) => (!openMenu));
-        console.log('openMenu: ', openMenu)
-    }
 
     useEffect(() => {
         AOS.init({ duration: 800, once: true });
@@ -37,11 +33,14 @@ function Home() {
             {/* About */}
             <About />
 
-            {/* Projects */}
-            <Projects />
+            {/* Skills */}
+            <Skills />
 
             {/* Tape Section */}
             <TapeSection />
+
+            {/* Projects */}
+            <Projects />
 
             {/* Contact */}
             <Contact />

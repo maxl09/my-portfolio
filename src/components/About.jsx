@@ -22,7 +22,7 @@ const About = () => {
             <Typography sx={{ typography: { xs: 'body2', md: 'h6' } }} color="inherit">
                 With a strong eye for detail and a problem-solving mindset, I bridge the gap between design and development, turning creative ideas into functional products that engage and delight users. Whether it’s building from scratch, enhancing existing platforms, or ensuring smooth deployment, I’m committed to delivering high-quality results that align with both business goals and user needs.
             </Typography>
-            <Button color="inherit" href="#projects" sx={{
+            <Button color="inherit" href="#skills" sx={{
                 width: 'fit-content',
                 marginTop: 4,
                 fontSize: '16px',
@@ -49,7 +49,7 @@ const About = () => {
                     "60%": { transform: "translateY(-10px)", opacity: 0 },
                     "100%": { transform: "translateY(0)", opacity: 1 },
                 },
-            }}>Projects <ArrowDownwardIcon className="downward-icon" sx={{ width: '20px', marginLeft: 0.5, marginBottom: 0.3 }} /></Button>
+            }}>Skills <ArrowDownwardIcon className="downward-icon" sx={{ width: '20px', marginLeft: 0.5, marginBottom: 0.3 }} /></Button>
         </Container>
     )
 }

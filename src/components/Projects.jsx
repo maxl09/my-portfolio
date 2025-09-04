@@ -14,6 +14,8 @@ import "aos/dist/aos.css";
 
 import CircularProgress from '@mui/material/CircularProgress';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+
 
 const Projects = () => {
 
@@ -46,7 +48,7 @@ const Projects = () => {
     ];
 
     return (
-        <Container id="projects" sx={{ width: '100%', paddingTop: 15, height: 'calc(100vh-250px)' }}>
+        <Container id="projects" sx={{ width: '100%', paddingTop: 15, minHeight: '100vh' }}>
             <Typography variant="h3" sx={{ fontWeight: 700, marginBottom: 5, textAlign: 'center' }} >
                 <span style={{
                     background: 'linear-gradient(90deg, #00ff99, #1f8053)',
@@ -114,6 +116,34 @@ const Projects = () => {
                     </Grid>
                 ))}
             </Grid>
+            <Button color="inherit" href="#contact" sx={{
+                width: 'fit-content',
+                marginTop: 4,
+                fontSize: '16px',
+                border: '1px solid rgba(60,60,60,1)',
+                borderRadius: '25px',
+                paddingX: 3,
+                background: 'rgba(60,60,60,0.2)',
+                boxShadow: "0 0 15px #1f8053",
+                transition: "box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out",
+                '&:hover': {
+                    borderColor: '#1f8053',
+                    color: "inherit",
+                    boxShadow: "0 0 25px #1f8053",
+                    "& .downward-icon": {
+                        animation: "arrowJumpDownward 0.5s ease forwards",
+                    }
+                },
+                "& .downward-icon": {
+                    display: "inline-block",
+                },
+                "@keyframes arrowJumpDownward": {
+                    "0%": { transform: "translateY(0)", opacity: 1 },
+                    "40%": { transform: "translateY(10px)", opacity: 0 },
+                    "60%": { transform: "translateY(-10px)", opacity: 0 },
+                    "100%": { transform: "translateY(0)", opacity: 1 },
+                },
+            }}>Contact <ArrowDownwardIcon className="downward-icon" sx={{ width: '20px', marginLeft: 0.5, marginBottom: 0.3 }} /></Button>
         </Container>
     )
 }
