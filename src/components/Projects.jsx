@@ -80,7 +80,7 @@ const Projects = () => {
                                     {project.description.toLowerCase().includes('pending') &&
                                         <CircularProgress size={20} />}
                                 </Box>
-                                <Box sx={{ display: 'flex', justifyContent: 'start', alignItems: 'center', gap: 1 }}>
+                                <Box sx={{ display: 'flex', justifyContent: 'start', alignItems: 'center', gap: 1, flexWrap: 'wrap' }}>
                                     {project.languages.map((lang) => (
                                         <Box sx={{ backgroundColor: 'rgb(12, 22, 17)', borderRadius: '15px', width: 'fit-content', padding: '3px 12px' }}>
                                             <Typography sx={{ color: 'rgb(63, 208, 140)' }}>
