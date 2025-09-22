@@ -21,10 +21,10 @@ const Projects = () => {
 
     const projects = [
         {
-            title: "Project #1",
-            description: "Pending...",
-            languages: ['React', 'AWS'],
-            link: "#"
+            title: "Instagram Clone",
+            description: "A full-stack social media application inspired by Instagram, built with React and Express.js, using MongoDB for a live database. The platform allows users to share photos, follow others, and interact through likes and comments. It also features user authentication, admin role management, and a responsive interface for creating, moderating, and managing content.",
+            languages: ['ExpressJS', 'NodeJS', 'JWT', 'MongoDB', 'ReactJS', 'Material UI'],
+            link: "https://ply-instagram-clone.vercel.app/"
         },
         {
             title: "Project #2",
