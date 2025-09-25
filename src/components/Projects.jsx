@@ -8,6 +8,7 @@ import {
     CardContent,
     CardActions,
     Box,
+    IconButton,
 } from "@mui/material";
 
 import "aos/dist/aos.css";
@@ -15,36 +16,45 @@ import "aos/dist/aos.css";
 import CircularProgress from '@mui/material/CircularProgress';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import { Github } from "lucide";
+import { GithubIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 
 const Projects = () => {
+
+    const navigate = useNavigate();
 
     const projects = [
         {
             title: "Instagram Clone",
             description: "A full-stack social media application inspired by Instagram, built with React and Express.js, using MongoDB for a live database. The platform allows users to share photos, follow others, and interact through likes and comments. It also features user authentication, admin role management, and a responsive interface for creating, moderating, and managing content.",
             languages: ['ExpressJS', 'NodeJS', 'JWT', 'MongoDB', 'ReactJS', 'Material UI'],
-            link: "https://ply-instagram-clone.vercel.app/"
+            link: "https://blog-frontend-4cy2.onrender.com",
+            github: 'https://github.com/maxl09/blog-backend',
         },
-        {
-            title: "Project #2",
-            description: "Pending...",
-            languages: ['WordPress'],
-            link: "#"
-        },
-        {
-            title: "Project #3",
-            description: "Pending...",
-            languages: ['HTML', 'CSS', 'JavaScript'],
-            link: "#"
-        }
-        ,
-        {
-            title: "Project #4",
-            description: "Pending...",
-            languages: ['Flutter', 'Dart'],
-            link: "#"
-        },
+        // {
+        //     title: "Project #2",
+        //     description: "Pending...",
+        //     languages: ['WordPress'],
+        //     link: "#",
+        //     github: '',
+        // },
+        // {
+        //     title: "Project #3",
+        //     description: "Pending...",
+        //     languages: ['HTML', 'CSS', 'JavaScript'],
+        //     link: "#",
+        //     github: '',
+        // }
+        // ,
+        // {
+        //     title: "Project #4",
+        //     description: "Pending...",
+        //     languages: ['Flutter', 'Dart'],
+        //     link: "#",
+        //     github: '',
+        // },
     ];
 
     return (
@@ -72,9 +82,9 @@ const Projects = () => {
                             }
                         }}>
                             <CardContent>
-                                <Typography variant="h5" sx={{ fontWeight: 700 }}>{project.title}</Typography>
+                                <Typography variant="h5" sx={{ fontWeight: 700, marginBottom: 1 }}>{project.title}</Typography>
                                 <Box sx={{ display: 'flex', justifyContent: 'start', alignItems: 'center', gap: 1, marginBottom: 2 }}>
-                                    <Typography variant="h7" color="inherit" sx={{ color: 'rgb(183, 183, 183)' }}>
+                                    <Typography variant="h7" color="inherit" sx={{ color: 'rgb(201, 201, 201)' }}>
                                         {project.description}
                                     </Typography>
                                     {project.description.toLowerCase().includes('pending') &&
@@ -90,7 +100,7 @@ const Projects = () => {
                                     ))}
                                 </Box>
                             </CardContent>
-                            <CardActions>
+                            <CardActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
                                 <Button
                                     href={project.link}
                                     target="_blank"
@@ -111,6 +121,9 @@ const Projects = () => {
                                     View Project
                                     <KeyboardDoubleArrowRightIcon />
                                 </Button>
+                                <IconButton component='a' href={project.github} target="_blank">
+                                    <GithubIcon strokeWidth={2.75} stroke="white" />
+                                </IconButton>
                             </CardActions>
                         </Card>
                     </Grid>
