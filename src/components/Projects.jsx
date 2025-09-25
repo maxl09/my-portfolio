@@ -16,7 +16,6 @@ import "aos/dist/aos.css";
 import CircularProgress from '@mui/material/CircularProgress';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import { Github } from "lucide";
 import { GithubIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
