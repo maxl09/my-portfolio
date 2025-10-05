@@ -23,14 +23,14 @@ import { useNavigate } from "react-router-dom";
 const Projects = () => {
 
     const navigate = useNavigate();
-
     const projects = [
         {
             title: "Instagram Clone",
-            description: "A full-stack social media application inspired by Instagram, built with React and Express.js, using MongoDB for a live database. The platform allows users to share photos, follow others, and interact through likes and comments. It also features user authentication, admin role management, and a responsive interface for creating, moderating, and managing content.",
+            description: `A full-stack social media application inspired by Instagram, built with React and Express.js, using MongoDB for a live database. The platform allows users to share photos, follow others, and interact through likes and comments. It also features user authentication, admin role management, and a responsive interface for creating, moderating, and managing content.`,
             languages: ['ExpressJS', 'NodeJS', 'JWT', 'MongoDB', 'ReactJS', 'Material UI'],
-            link: "https://blog-frontend-4cy2.onrender.com",
+            link: "https://blog-frontend-4cy2.onrender.com/signup",
             github: 'https://github.com/maxl09/blog-backend',
+            mainImage: '/images/screenshot-2.png',
         },
         // {
         //     title: "Project #2",
@@ -63,27 +63,36 @@ const Projects = () => {
                     background: 'linear-gradient(90deg, #00ff99, #1f8053)',
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
-                }}>Featured Projects</span>
+                }}>
+                    Featured Projects
+                </span>
             </Typography>
             <Grid container spacing={4}>
                 {projects.map((project, index) => (
-                    <Grid size={{ xs: 12, md: 6 }} key={index} data-aos="zoom-in">
+                    <Grid size={{ xs: 12, md: 4 }} key={index} data-aos="zoom-in">
                         <Card sx={{
+                            cursor: 'pointer',
                             height: "100%",
                             backgroundColor: 'background.default',
                             border: '2px solid rgba(31, 128, 83, 0.55)',
                             borderRadius: '10px',
                             padding: '10px',
-                            transition: '0.3s transform ease',
+                            transition: '0.7s scale ease',
                             '&:hover': {
-                                transform: 'translateY(-10px)',
+                                scale: '1.04',
                                 borderColor: 'rgba(31, 128, 83, 1)'
                             }
                         }}>
                             <CardContent>
-                                <Typography variant="h5" sx={{ fontWeight: 700, marginBottom: 1 }}>{project.title}</Typography>
+                                <img
+                                    src={project.mainImage}
+                                    alt={project.title}
+                                    style={{ width: '100%', objectFit: 'cover', border: '2px solid gray', borderRadius: '4px', marginBottom: '20px' }} />
+                                <Typography variant="h5" sx={{ fontWeight: 700, marginBottom: 1 }}>
+                                    {project.title}
+                                </Typography>
                                 <Box sx={{ display: 'flex', justifyContent: 'start', alignItems: 'center', gap: 1, marginBottom: 2 }}>
-                                    <Typography variant="h7" color="inherit" sx={{ color: 'rgb(201, 201, 201)' }}>
+                                    <Typography variant="body2" color="inherit" sx={{ color: 'rgb(201, 201, 201)' }}>
                                         {project.description}
                                     </Typography>
                                     {project.description.toLowerCase().includes('pending') &&
@@ -99,7 +108,7 @@ const Projects = () => {
                                     ))}
                                 </Box>
                             </CardContent>
-                            <CardActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <CardActions sx={{ display: 'flex', justifyContent: 'space-between', paddingX: '10px' }}>
                                 <Button
                                     href={project.link}
                                     target="_blank"
@@ -108,19 +117,23 @@ const Projects = () => {
                                         justifyContent: 'start',
                                         alignItems: 'center',
                                         gap: 0.5,
-                                        fontSize: 18,
+                                        fontSize: 15,
                                         fontWeight: 700,
                                         color: 'rgb(48, 245, 153)',
                                         textTransform: 'capitalize',
+                                        border: '1px solid rgb(48, 245, 153)',
+                                        borderRadius: '25px',
+                                        paddingX: '20px',
                                         '&:hover': {
                                             color: 'white',
+                                            borderColor: 'white'
                                         }
                                     }}
                                 >
                                     View Project
                                     <KeyboardDoubleArrowRightIcon />
                                 </Button>
-                                <IconButton component='a' href={project.github} target="_blank">
+                                <IconButton component='a' href={project.github} target="_blank" sx={{ border: '1px solid rgb(143, 143, 143)' }}>
                                     <GithubIcon strokeWidth={2.75} stroke="white" />
                                 </IconButton>
                             </CardActions>
@@ -128,34 +141,39 @@ const Projects = () => {
                     </Grid>
                 ))}
             </Grid>
-            <Button color="inherit" href="#contact" sx={{
-                width: 'fit-content',
-                marginTop: 4,
-                fontSize: '16px',
-                border: '1px solid rgba(60,60,60,1)',
-                borderRadius: '25px',
-                paddingX: 3,
-                background: 'rgba(60,60,60,0.2)',
-                boxShadow: "0 0 15px #1f8053",
-                transition: "box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out",
-                '&:hover': {
-                    borderColor: '#1f8053',
-                    color: "inherit",
-                    boxShadow: "0 0 25px #1f8053",
+            <Button
+                color="inherit"
+                href="#contact"
+                sx={{
+                    width: 'fit-content',
+                    marginTop: 5,
+                    fontSize: '16px',
+                    border: '1px solid rgba(60,60,60,1)',
+                    borderRadius: '25px',
+                    paddingX: 3,
+                    background: 'rgba(60,60,60,0.2)',
+                    boxShadow: "0 0 15px #1f8053",
+                    transition: "box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out",
+                    '&:hover': {
+                        borderColor: '#1f8053',
+                        color: "inherit",
+                        boxShadow: "0 0 25px #1f8053",
+                        "& .downward-icon": {
+                            animation: "arrowJumpDownward 0.5s ease forwards",
+                        }
+                    },
                     "& .downward-icon": {
-                        animation: "arrowJumpDownward 0.5s ease forwards",
-                    }
-                },
-                "& .downward-icon": {
-                    display: "inline-block",
-                },
-                "@keyframes arrowJumpDownward": {
-                    "0%": { transform: "translateY(0)", opacity: 1 },
-                    "40%": { transform: "translateY(10px)", opacity: 0 },
-                    "60%": { transform: "translateY(-10px)", opacity: 0 },
-                    "100%": { transform: "translateY(0)", opacity: 1 },
-                },
-            }}>Contact <ArrowDownwardIcon className="downward-icon" sx={{ width: '20px', marginLeft: 0.5, marginBottom: 0.3 }} /></Button>
+                        display: "inline-block",
+                    },
+                    "@keyframes arrowJumpDownward": {
+                        "0%": { transform: "translateY(0)", opacity: 1 },
+                        "40%": { transform: "translateY(10px)", opacity: 0 },
+                        "60%": { transform: "translateY(-10px)", opacity: 0 },
+                        "100%": { transform: "translateY(0)", opacity: 1 },
+                    },
+                }}>
+                Contact <ArrowDownwardIcon className="downward-icon" sx={{ width: '20px', marginLeft: 0.5, marginBottom: 0.3 }} />
+            </Button>
         </Container>
     )
 }

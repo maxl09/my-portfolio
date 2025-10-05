@@ -108,13 +108,13 @@ const HeroSection = () => {
                     }}>Front-End Web Developer</span>
                 </Typography>
                 <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
-                    <Button href="https://github.com/maxl09" sx={{ padding: 1, minWidth: 0, border: '1px solid #1f8053', borderRadius: '50%', transition: '0.3s ease-in-out', ":hover": { color: 'white', borderColor: '#1f8053', background: '#1f8053', boxShadow: '0 0 25px #1f8053', transform: 'translateY(-5px)scale(1.2)' } }}>
+                    <Button href="https://github.com/maxl09" target="_blank" sx={{ padding: 1, minWidth: 0, border: '1px solid #1f8053', borderRadius: '50%', transition: '0.3s ease-in-out', ":hover": { color: 'white', borderColor: '#1f8053', background: '#1f8053', boxShadow: '0 0 25px #1f8053', transform: 'translateY(-5px)scale(1.2)' } }}>
                         <GitHubIcon />
                     </Button>
-                    <Button href="https://www.linkedin.com/in/max-ly/" sx={{ padding: 1, minWidth: 0, border: '1px solid #1f8053', borderRadius: '50%', transition: '0.3s ease-in-out', ":hover": { color: 'white', borderColor: '#1f8053', background: '#1f8053', boxShadow: '0 0 25px #1f8053', transform: 'translateY(-5px)scale(1.2)' } }}>
+                    <Button href="https://www.linkedin.com/in/max-ly/" target="_blank" sx={{ padding: 1, minWidth: 0, border: '1px solid #1f8053', borderRadius: '50%', transition: '0.3s ease-in-out', ":hover": { color: 'white', borderColor: '#1f8053', background: '#1f8053', boxShadow: '0 0 25px #1f8053', transform: 'translateY(-5px)scale(1.2)' } }}>
                         <LinkedInIcon />
                     </Button>
-                    <Button href="mailto:maxdev925@gmail.com" sx={{ padding: 1, minWidth: 0, border: '1px solid #1f8053', borderRadius: '50%', transition: '0.3s ease-in-out', ":hover": { color: 'white', borderColor: '#1f8053', background: '#1f8053', boxShadow: '0 0 25px #1f8053', transform: 'translateY(-5px)scale(1.2)' } }}>
+                    <Button href="mailto:maxdev925@gmail.com" target="_blank" sx={{ padding: 1, minWidth: 0, border: '1px solid #1f8053', borderRadius: '50%', transition: '0.3s ease-in-out', ":hover": { color: 'white', borderColor: '#1f8053', background: '#1f8053', boxShadow: '0 0 25px #1f8053', transform: 'translateY(-5px)scale(1.2)' } }}>
                         <EmailIcon />
                     </Button>
                 </Box>
