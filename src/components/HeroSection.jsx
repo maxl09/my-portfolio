@@ -5,6 +5,7 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { File, FileText } from 'lucide-react';
 
 const HeroSection = () => {
     return (
@@ -15,7 +16,7 @@ const HeroSection = () => {
                 py: 0,
                 position: 'relative',
                 width: '100%',
-                height: '100vh',
+                height: 'calc(100vh - 94px)',
                 overflow: 'hidden',
             }}
             data-aos="fade-up"
@@ -35,7 +36,7 @@ const HeroSection = () => {
                     zIndex: 0,
                 }}
             >
-                <source src="/video-bg/hero-section.mp4" type="video/mp4" />
+                <source src="/video-bg/hero-section-2.mp4" type="video/mp4" />
             </video>
             {/* Dark Overlay for Readability */}
             <Box
@@ -45,7 +46,7 @@ const HeroSection = () => {
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    backgroundColor: "rgba(0,0,0,0.4)",
+                    backgroundColor: "rgba(23, 23, 23, 0.68)",
                     zIndex: 1,
                 }}
             />
@@ -108,15 +109,30 @@ const HeroSection = () => {
                     }}>Front-End Web Developer</span>
                 </Typography>
                 <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
-                    <Button href="https://github.com/maxl09" target="_blank" sx={{ padding: 1, minWidth: 0, border: '1px solid #1f8053', borderRadius: '50%', transition: '0.3s ease-in-out', ":hover": { color: 'white', borderColor: '#1f8053', background: '#1f8053', boxShadow: '0 0 25px #1f8053', transform: 'translateY(-5px)scale(1.2)' } }}>
-                        <GitHubIcon />
-                    </Button>
-                    <Button href="https://www.linkedin.com/in/max-ly/" target="_blank" sx={{ padding: 1, minWidth: 0, border: '1px solid #1f8053', borderRadius: '50%', transition: '0.3s ease-in-out', ":hover": { color: 'white', borderColor: '#1f8053', background: '#1f8053', boxShadow: '0 0 25px #1f8053', transform: 'translateY(-5px)scale(1.2)' } }}>
-                        <LinkedInIcon />
-                    </Button>
-                    <Button href="mailto:maxdev925@gmail.com" target="_blank" sx={{ padding: 1, minWidth: 0, border: '1px solid #1f8053', borderRadius: '50%', transition: '0.3s ease-in-out', ":hover": { color: 'white', borderColor: '#1f8053', background: '#1f8053', boxShadow: '0 0 25px #1f8053', transform: 'translateY(-5px)scale(1.2)' } }}>
-                        <EmailIcon />
-                    </Button>
+                    <Box>
+                        <Button href="https://github.com/maxl09" target="_blank" sx={{ padding: 1.2, minWidth: 0, border: '2px solid #1f8053', borderRadius: '50%', transition: '0.3s ease-in-out', ":hover": { color: 'white', borderColor: '#1f8053', background: '#1f8053', boxShadow: '0 0 25px #1f8053', transform: 'translateY(-5px)scale(1.2)' } }}>
+                            <GitHubIcon style={{ color: 'white' }} />
+                        </Button>
+                        <Typography variant="body1" sx={{ marginTop: 1.5, fontWeight: 700 }}>GitHub</Typography>
+                    </Box>
+                    <Box>
+                        <Button href="https://www.linkedin.com/in/max-ly/" target="_blank" sx={{ padding: 1.2, minWidth: 0, border: '2px solid #1f8053', borderRadius: '50%', transition: '0.3s ease-in-out', ":hover": { color: 'white', borderColor: '#1f8053', background: '#1f8053', boxShadow: '0 0 25px #1f8053', transform: 'translateY(-5px)scale(1.2)' } }}>
+                            <LinkedInIcon style={{ color: 'white' }} />
+                        </Button>
+                        <Typography variant="body1" sx={{ marginTop: 1.5, fontWeight: 700 }}>LinkedIn</Typography>
+                    </Box>
+                    <Box>
+                        <Button href="mailto:maxdev925@gmail.com" target="_blank" sx={{ padding: 1.2, minWidth: 0, border: '2px solid #1f8053', borderRadius: '50%', transition: '0.3s ease-in-out', ":hover": { color: 'white', borderColor: '#1f8053', background: '#1f8053', boxShadow: '0 0 25px #1f8053', transform: 'translateY(-5px)scale(1.2)' } }}>
+                            <EmailIcon style={{ color: 'white' }} />
+                        </Button>
+                        <Typography variant="body1" sx={{ marginTop: 1.5, fontWeight: 700 }}>Email</Typography>
+                    </Box>
+                    <Box>
+                        <Button href="/files/resume.pdf" target="_blank" sx={{ padding: 1.2, minWidth: 0, border: '2px solid #1f8053', borderRadius: '50%', transition: '0.3s ease-in-out', ":hover": { color: 'white', borderColor: '#1f8053', background: '#1f8053', boxShadow: '0 0 25px #1f8053', transform: 'translateY(-5px)scale(1.2)' } }}>
+                            <FileText style={{ color: 'white' }} />
+                        </Button>
+                        <Typography variant="body1" sx={{ marginTop: 1.5, fontWeight: 700 }}>Resume</Typography>
+                    </Box>
                 </Box>
                 <Button color="inherit" href="#about" sx={{
                     marginTop: 4,
@@ -147,7 +163,7 @@ const HeroSection = () => {
                 }}>About Me <ArrowDownwardIcon className="downward-icon" sx={{ width: '20px', marginLeft: 0.5, marginBottom: 0.3 }} /></Button>
             </Box>
 
-        </Box>
+        </Box >
     )
 }
 
